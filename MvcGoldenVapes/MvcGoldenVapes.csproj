@@ -64,6 +64,7 @@
     <Content Include="wwwroot\images\ZOMBIE\5.png" />
     <Content Include="wwwroot\images\ZOMBIE\6.png" />
     <Content Include="wwwroot\images\ZOMBIE\7.png" />
+    <Content Include="wwwroot\js\Facebook.js" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
