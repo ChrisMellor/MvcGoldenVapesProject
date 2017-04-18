@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+<h2>@ViewData["Title"]</h2>
+<br>
+<h3>@ViewData["Message"]</h3>
+
+<address>
+    27 Bethcar St<br />
+    Ebbw Vale <br />
+    Gwent<br />
+    NP23 6HH<br />
+    <abbr title="Phone">P:</abbr>
+    01495 305200
+</address>
+
+<address>
+    <strong>Support:</strong> <a href="https://www.facebook.com/pg/SilkVapour">Facebook Page</a><br />
+</address>
+
+
+<h3>Contact Form</h3>
+<div>
+    <form action="mailto:ebbwvale@stores.cashgenerator.co.uk?Subject=Contact%20Us&body=">
+        <br />
+
+        <label for="fname">First Name</label>
+        <input id="fname" name="firstname" placeholder="Fred" type="text" /><br />
+
+        <label for="lname">Last Name</label>
+        <input id="lname" name="lastname" pattern="[a-zA-Z]*" placeholder="Bloggs" type="text" /><br />
+
+        <label for="email">Email Address</label>
+        <input id="email" name="email" placeholder="example@provider.co.uk" required="" type="text" /><br />
+
+        <label for="country">Country</label>
+        <select id="country" name="country" type="select-one" value="UK"><option value="UK">United Kingdom</option><option value="canada">Canada</option><option value="usa">USA</option><option value="Aus">Australia</option></select><br />
+
+        <label for="body">Comments</label>
+        <textarea id="body" name="body" placeholder="Please enter your comments that you want to talk to us about" required="" rows="4" cols="20"></textarea>
+
+        <br />
+        <input type="submit" value="Send" /><br />
+    </form>
+</div>
+
+

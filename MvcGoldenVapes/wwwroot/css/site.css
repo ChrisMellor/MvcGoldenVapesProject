@@ -1,0 +1,187 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    text-align: center;
+    align: center;
+}
+
+nav{
+    text-align:left;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 51px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 350px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+.btn-bracketed::before {
+    display: inline-block;
+    content: "[";
+    padding-right: 0.5em;
+}
+
+.btn-bracketed::after {
+    display: inline-block;
+    content: "]";
+    padding-left: 0.5em;
+}
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.active {
+    background-color: #CFC87B;
+    color: black;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+input[type=password], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+input[type=submit] {
+    background-color: #CFC87B;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    input[type=submit]:hover {
+        background-color: #f9f9f9;
+    }
+
+
+
+form {
+    display: inline-block;
+    text-align: center;
+}
+
+input {
+    display: block;
+    width: 700px;
+    text-decoration: none;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    text-align: left;
+}
+
+#icons {
+    float: right;
+}
+
+#aboutLogo {
+    position: relative;
+    float: right;
+}
+
+#wrapper {
+    white-space: nowrap;
+}
+
+#leftcolumn, #rightcolumn {
+    float: left;
+    min-height: 450px;
+}
+
+#leftcolumn {
+    width: 40%;
+}
+
+#rightcolumn {
+    width: 40%;
+}
+
+#innerLeft, #innerRight {
+    float: right;
+    min-height: 450px;
+    display: block;
+}
+
+#innerLeft {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#innerRight {
+    width: 40%;
+}
+
+#picture {
+    float: left;
+    width: 15%;
+    margin: 20px 0;
+    line-height: auto;
+}
+
+#text {
+    width: auto;
+    padding-left: 16%;
+    line-height: auto;
+    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+    #text p {
+        display: inline-block;
+        margin: 20px 0;
+        vertical-align: middle;
+        line-height: normal;
+    }
+
+table {
+    width: 100%;
+}
+
+th {
+    height: 50px;
+}
+
+#productLayout {
+    padding-left: 15%;
+}

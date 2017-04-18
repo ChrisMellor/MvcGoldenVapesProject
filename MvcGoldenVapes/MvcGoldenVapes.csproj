@@ -1,0 +1,92 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <UserSecretsId>aspnet-MvcGoldenVapes-623c275f-3f46-4ae5-a005-11f6e2353279</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\images\AREA 51.png" />
+    <Content Include="wwwroot\images\area51.jpg" />
+    <Content Include="wwwroot\images\AREA51\1.png" />
+    <Content Include="wwwroot\images\AREA51\2.png" />
+    <Content Include="wwwroot\images\AREA51\3.png" />
+    <Content Include="wwwroot\images\AREA51\4.png" />
+    <Content Include="wwwroot\images\AREA51\5.png" />
+    <Content Include="wwwroot\images\AREA51\Area51Cos.png" />
+    <Content Include="wwwroot\images\AREA51\Area51EventHorizon.png" />
+    <Content Include="wwwroot\images\AREA51\Area51Greenman.png" />
+    <Content Include="wwwroot\images\Create Account.png" />
+    <Content Include="wwwroot\images\facebookIcon.png" />
+    <Content Include="wwwroot\images\Grim Reaper.jpg" />
+    <Content Include="wwwroot\images\Grim.png" />
+    <Content Include="wwwroot\images\Inspired Haze.jpg" />
+    <Content Include="wwwroot\images\Inspired.png" />
+    <Content Include="wwwroot\images\INSPIRED\1.png" />
+    <Content Include="wwwroot\images\INSPIRED\2.png" />
+    <Content Include="wwwroot\images\INSPIRED\3.png" />
+    <Content Include="wwwroot\images\INSPIRED\4.png" />
+    <Content Include="wwwroot\images\INSPIRED\5.png" />
+    <Content Include="wwwroot\images\INSPIRED\6.png" />
+    <Content Include="wwwroot\images\INSPIRED\7.png" />
+    <Content Include="wwwroot\images\INSPIRED\8.png" />
+    <Content Include="wwwroot\images\instagramIcon.png" />
+    <Content Include="wwwroot\images\logo.jpg" />
+    <Content Include="wwwroot\images\Simply Vapour.jpg" />
+    <Content Include="wwwroot\images\Simply.png" />
+    <Content Include="wwwroot\images\SIMPLY\1.png" />
+    <Content Include="wwwroot\images\SIMPLY\2.png" />
+    <Content Include="wwwroot\images\SIMPLY\3.png" />
+    <Content Include="wwwroot\images\SIMPLY\4.png" />
+    <Content Include="wwwroot\images\SIMPLY\5.png" />
+    <Content Include="wwwroot\images\SIMPLY\6.png" />
+    <Content Include="wwwroot\images\SIMPLY\7.png" />
+    <Content Include="wwwroot\images\VAPORCREW\VC1.png" />
+    <Content Include="wwwroot\images\VAPORCREW\VC2.png" />
+    <Content Include="wwwroot\images\VAPORCREW\VC3.png" />
+    <Content Include="wwwroot\images\VAPORCREW\VC4.png" />
+    <Content Include="wwwroot\images\VAPORCREW\VC5.png" />
+    <Content Include="wwwroot\images\Vapour Juice.jpg" />
+    <Content Include="wwwroot\images\VAPOUR.png" />
+    <Content Include="wwwroot\images\Zombie Juice.jpg" />
+    <Content Include="wwwroot\images\ZOMBIE JUICE.png" />
+    <Content Include="wwwroot\images\ZOMBIE\1.png" />
+    <Content Include="wwwroot\images\ZOMBIE\2.png" />
+    <Content Include="wwwroot\images\ZOMBIE\3.png" />
+    <Content Include="wwwroot\images\ZOMBIE\4.png" />
+    <Content Include="wwwroot\images\ZOMBIE\5.png" />
+    <Content Include="wwwroot\images\ZOMBIE\6.png" />
+    <Content Include="wwwroot\images\ZOMBIE\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="1.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4lib_4bootstrap_4dist_4css_4bootstrap_1css_1map__JSONSchema="http://jsonapi.org/schema" /></VisualStudio></ProjectExtensions>
+
+</Project>
