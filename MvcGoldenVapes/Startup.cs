@@ -12,11 +12,13 @@ using Microsoft.Extensions.Logging;
 using MvcGoldenVapes.Data;
 using MvcGoldenVapes.Models;
 using MvcGoldenVapes.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MvcGoldenVapes
 {
     public class Startup
     {
+        string _testSecret = null;
         public Startup(IHostingEnvironment env)
         {
             var builder = new ConfigurationBuilder()
@@ -36,6 +38,8 @@ namespace MvcGoldenVapes
 
         public IConfigurationRoot Configuration { get; }
 
+       
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -47,7 +51,13 @@ namespace MvcGoldenVapes
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddMvc();
+            _testSecret = Configuration["MySecret"];
+
+            services.AddMvc(options =>
+            {
+                options.SslPort = 44356;
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
