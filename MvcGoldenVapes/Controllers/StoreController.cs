@@ -62,5 +62,15 @@ namespace MvcGoldenVapes.Controllers
 
             return View();
         }
+
+        public IActionResult Payment()
+        {
+
+            ViewData["Message"] = "The Page To Acquire Payment Details";
+
+            return View();
+
+
+        }
     }
 }
