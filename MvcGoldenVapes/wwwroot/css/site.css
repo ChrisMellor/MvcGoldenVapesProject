@@ -78,6 +78,16 @@ input[type=password], select, textarea {
     margin-bottom: 16px;
 }
 
+input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
 input[type=submit] {
     background-color: #CFC87B;
     color: black;
@@ -96,12 +106,17 @@ input[type=submit] {
 form {
     display: inline-block;
     text-align: center;
+    min-width:60%;
 }
 
 input {
-    display: block;
-    width: 700px;
-    text-decoration: none;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
 }
 
 footer {
