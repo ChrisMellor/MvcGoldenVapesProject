@@ -13,12 +13,9 @@
     @Html.TextBox("FirstName")<br />
 }
 <form action="">
-    First name:<br>
+    Full name:<br>
     <input type="text" name="firstname" value="Mickey">
     <br>
-    Last name:<br>
-    <input type="text" name="lastname" value="Mouse">
-    <br>    
     Credit Card Number:<br>
     <input type="text" name="creditcard" value="xxxx-xxxx-xxxx-xxxx">
     <br>    
@@ -37,7 +34,7 @@
 
         <br><br>
 
-    <input type="submit" value="Submit" onclick="validateCard()">
+    <input type="submit" value="Submit" id="validate" onclick="validateCard(card)">
 </form>
 
 
