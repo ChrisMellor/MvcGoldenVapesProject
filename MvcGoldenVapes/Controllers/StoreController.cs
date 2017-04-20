@@ -62,21 +62,13 @@ namespace MvcGoldenVapes.Controllers
 
             return View();
         }
-        [HttpGet]
+    
         public IActionResult Payment()
         {
 
             ViewData["Message"] = "The Page To Acquire Payment Details";
 
             return View();
-
-        }
-        [HttpPost]
-        public IActionResult Payment(String FirstName, string LastName, string CreditCardNumber, string ExpDate, string SecurityCode, string Address1, string Address2) 
-        {
-
-            return View();
-            
 
         }
 
