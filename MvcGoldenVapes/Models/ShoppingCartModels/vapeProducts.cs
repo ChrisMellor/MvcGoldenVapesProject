@@ -22,8 +22,7 @@ namespace MvcGoldenVapes.Models.ShoppingCartModels
         public double VapePrice { get; set; }
         public string VapeSize { get; set; }
 
-        public vapeProducts()
-        { }
+       
 
     }
 

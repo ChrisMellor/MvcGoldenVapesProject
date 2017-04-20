@@ -1,0 +1,58 @@
+@model MvcGoldenVapes.Models.ShoppingCartModels.vapeProducts
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>vapeProducts</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VapeID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VapeID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VapeBrand)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VapeBrand)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VapeName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VapeName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VapeStock)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VapeStock)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VapePrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VapePrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VapeSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VapeSize)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.VapeID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

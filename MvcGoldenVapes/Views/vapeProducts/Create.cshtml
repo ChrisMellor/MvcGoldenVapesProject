@@ -1,0 +1,63 @@
+@model MvcGoldenVapes.Models.ShoppingCartModels.vapeProducts
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>vapeProducts</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="VapeBrand" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="VapeBrand" class="form-control" />
+                <span asp-validation-for="VapeBrand" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="VapeName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="VapeName" class="form-control" />
+                <span asp-validation-for="VapeName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="VapeStock" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="VapeStock" class="form-control" />
+                <span asp-validation-for="VapeStock" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="VapePrice" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="VapePrice" class="form-control" />
+                <span asp-validation-for="VapePrice" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="VapeSize" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="VapeSize" class="form-control" />
+                <span asp-validation-for="VapeSize" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

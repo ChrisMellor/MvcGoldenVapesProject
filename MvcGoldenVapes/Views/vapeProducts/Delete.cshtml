@@ -1,0 +1,53 @@
+@model MvcGoldenVapes.Models.ShoppingCartModels.vapeProducts
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>vapeProducts</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="VapeID" />
+        <dt>
+            @Html.DisplayNameFor(model => model.VapeBrand)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VapeBrand)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VapeName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VapeName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VapeStock)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VapeStock)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VapePrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VapePrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VapeSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VapeSize)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>
