@@ -94,6 +94,7 @@ namespace MvcGoldenVapes
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
             seedData.Initialize(app.ApplicationServices);
         }
     }

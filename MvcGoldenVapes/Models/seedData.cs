@@ -3,7 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using MvcGoldenVapes.Data;
 using MvcGoldenVapes.Models.ShoppingCartModels;
 using System;
-using System.Linq;
+using System.Linq;
+
 
 namespace MvcGoldenVapes.Models
 {
@@ -22,7 +23,8 @@ namespace MvcGoldenVapes.Models
                     return;
                 }
 
-                context.products.AddRange(                    new vapeProducts
+                context.products.AddRange(
+                    new vapeProducts
                     {
                         VapeID = 45,
                         VapeBrand = "Area 51",
@@ -34,7 +36,8 @@ namespace MvcGoldenVapes.Models
                     );
                 context.SaveChanges();
 
-            }
+            }
+
 
         }
 
