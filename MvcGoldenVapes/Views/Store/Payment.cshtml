@@ -1,5 +1,34 @@
 ﻿@{
     ViewData["Title"] = "Payment Page";
 }
-<h2>@ViewData["Title"]</h2>
+<h2>@ViewData["Title"] </h2>
 <h3>@ViewData["Message"]</h3>
+
+<h2>
+    <span>Your shopping cart:</span>
+</h2>
+@using (Html.BeginForm())
+{
+    @Html.Label("FirstName")<br />
+    @Html.TextBox("FirstName")<br />
+
+    @Html.Label("LastName")<br />
+    @Html.TextBox("LastName")<br />
+
+    @Html.Label("CreditCardNumber")<br />
+    @Html.TextBox("CreditCardNumber")<br />
+
+    @Html.Label("ExpDate")<br />
+    @Html.TextBox("ExpDate")<br />
+
+    @Html.Label("SecurityCode")<br />
+    @Html.TextBox("SecurityCode")<br />
+
+    @Html.Label("Address1")<br />
+    @Html.TextBox("Address1")<br />
+
+    @Html.Label("Address2")<br />
+    @Html.TextBox("Address2")<br />
+
+    <button type="submit">Submit Details</button>
+}
