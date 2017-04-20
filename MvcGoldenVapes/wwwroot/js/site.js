@@ -3,7 +3,7 @@
     return re.test(card);
 }
 
-function validateFName(name) {
+function validateName(name) {
     var re = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/
     return re.test(name)
 }
@@ -20,8 +20,8 @@ function validateSVC(security){
 
 function validate() {
 
-    var fname = $("#name").val();
-    if (validateFName(name)) {
+    var Name = $("#name").val();
+    if (validateName(Name)) {
     }
     else {
         alert("Please enter a Valid Name");

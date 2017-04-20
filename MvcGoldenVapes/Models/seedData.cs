@@ -23,17 +23,7 @@ namespace MvcGoldenVapes.Models
                     return;
                 }
 
-                context.products.AddRange(
-                    new vapeProducts
-                    {
-                        VapeID = 45,
-                        VapeBrand = "Area 51",
-                        VapeName = "Xenos",
-                        VapePrice = 8.00,
-                        VapeSize = "10ml",
-                        VapeStock = 1
-                    }
-                    );
+               
                 context.SaveChanges();
 
             }
