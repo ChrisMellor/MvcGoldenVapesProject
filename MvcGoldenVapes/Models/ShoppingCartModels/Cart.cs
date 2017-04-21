@@ -15,8 +15,4 @@ namespace MvcGoldenVapes.Models.ShoppingCartModels
         public double total { get; set; }
     }
 
-    public class cartDBContext : DbContext
-    {
-        public DbSet<Cart> carts { get; set; }
-    }
 }
