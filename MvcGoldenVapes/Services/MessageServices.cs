@@ -5,13 +5,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Types;
 
 namespace MvcGoldenVapes.Services
 {
     // This class is used by the application to send Email and SMS
     // when you turn on two-factor authentication in ASP.NET Identity.
     // For more details see this link https://go.microsoft.com/fwlink/?LinkID=532713
-    public class AuthMessageSender : IEmailSender, ISmsSender
+    public class AuthMessageSender : IEmailSender
     {
         public AuthMessageSender(IOptions<AuthMessageSenderOptions> optionsAccessor)
         {
@@ -19,6 +22,7 @@ namespace MvcGoldenVapes.Services
         }
 
         public AuthMessageSenderOptions Options { get; } //set only via Secret Manager
+
         public Task SendEmailAsync(string email, string subject, string message)
         {
             // Plug in your email service here to send an email.
@@ -31,7 +35,7 @@ namespace MvcGoldenVapes.Services
             var client = new SendGridClient(apiKey);
             var msg = new SendGridMessage()
             {
-                From = new EmailAddress("Joe@contoso.com", "Joe Smith"),
+                From = new EmailAddress("Admin@GoldenVapes.org", "GoldenVapes Admin"),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message
@@ -39,10 +43,7 @@ namespace MvcGoldenVapes.Services
             msg.AddTo(new EmailAddress(email));
             var response = await client.SendEmailAsync(msg);
         }
-        public Task SendSmsAsync(string number, string message)
-        {
-            // Plug in your SMS service here to send a text message.
-            return Task.FromResult(0);
-        }
+
+
     }
 }

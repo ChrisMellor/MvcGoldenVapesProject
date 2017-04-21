@@ -47,14 +47,13 @@ namespace MvcGoldenVapes
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-              .AddEntityFrameworkStores<ApplicationDbContext>()
-              .AddDefaultTokenProviders();
-
+           
             services.AddIdentity<ApplicationUser, IdentityRole>(config =>
             {
                 config.SignIn.RequireConfirmedEmail = true;
-            });
+            })
+        .AddEntityFrameworkStores<ApplicationDbContext>()
+        .AddDefaultTokenProviders();
 
 
             var connection = @"Server=(localdb)\mssqllocaldb;Database=GoldenVapes;Trusted_Connection=True;";
@@ -74,10 +73,15 @@ namespace MvcGoldenVapes
                 options.Filters.Add(new RequireHttpsAttribute());
             });
 
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+                options.Lockout.MaxFailedAccessAttempts = 10;
+            });
+
+
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();
-            services.AddTransient<ISmsSender, AuthMessageSender>();
-
             services.Configure<AuthMessageSenderOptions>(Configuration);
 
         }
