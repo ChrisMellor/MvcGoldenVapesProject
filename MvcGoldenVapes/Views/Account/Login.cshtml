@@ -9,7 +9,6 @@
 }
 
 <h2>@ViewData["Title"]</h2>
-
 <div class="row">
     <div>
         <section>
@@ -63,9 +62,7 @@
                 var loginProviders = SignInManager.GetExternalAuthenticationSchemes().ToList();
                 if (loginProviders.Count == 0)
                 {
-                    <div>
-                        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="false"></div>
-                    </div>
+                    <div class="fb-login-button" data-width="65" data-max-rows="1" data-size="small" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
                 }
                 else
                 {
