@@ -29,22 +29,21 @@ namespace MvcGoldenVapes.Controllers
   
 
         // GET: vapeProducts/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+public async Task<IActionResult> Details(int? id)
+{
+if (id == null)
+{
+return NotFound();
+}
 
             var vapeProducts = await _context.products
-                .SingleOrDefaultAsync(m => m.VapeID == id);
+                            .SingleOrDefaultAsync(m => m.VapeID == id);
             if (vapeProducts == null)
             {
-                return NotFound();
-            }
-
-            return View(vapeProducts);
-        }
+return NotFound();
+}
+return View(vapeProducts);
+}
 
         // GET: vapeProducts/Create
         public IActionResult Create()
@@ -118,14 +117,6 @@ namespace MvcGoldenVapes.Controllers
             }
             return View(vapeProducts);
         }
-
-        public IActionResult Details()
-        {
-            ViewData["Message"] = "The Page To Acquire Payment Details";
-
-            return View();
-        }
-
         // GET: vapeProducts/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

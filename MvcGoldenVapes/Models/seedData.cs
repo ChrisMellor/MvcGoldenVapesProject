@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.CodeAnalysis;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MvcGoldenVapes.Data;
 using MvcGoldenVapes.Models.ShoppingCartModels;
@@ -8,7 +9,7 @@ using System.Linq;
 
 namespace MvcGoldenVapes.Models
 {
-    public class seedData
+    public class SeedData
     { 
 
 
@@ -22,9 +23,33 @@ namespace MvcGoldenVapes.Models
                 {
                     return;
                 }
-
-               
-                context.SaveChanges();
+                context.products.AddRange(
+ new vapeProducts
+ {
+     VapeBrand = "Jim",
+     VapeName = "Ninja",
+     VapePrice = 9.99,
+     VapeSize = "10",
+     VapeStock = 9
+ },
+ new vapeProducts
+ {
+     VapeBrand = "Jerry",
+     VapeName = "Daog",
+     VapePrice = 9.99,
+     VapeSize = "10",
+     VapeStock = 9
+ },
+ new vapeProducts
+ {
+     VapeBrand = "Bob",
+     VapeName = "Cat",
+     VapePrice = 9.99,
+     VapeSize = "10",
+     VapeStock = 9
+ }
+ );
+                 context.SaveChanges();
 
             }
 

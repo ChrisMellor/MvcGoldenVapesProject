@@ -7,34 +7,30 @@
 <h2>
     <span>Please Enter Your Payment Details Below:</span>
 </h2>
-@using (Html.BeginForm())
-{
-    @Html.Label("FirstName")<br />
-    @Html.TextBox("FirstName")<br />
-}
+
 <form action="">
     Full name:<br>
-    <input type="text" name="Name" value="Mickey">
+    <input type="text" id="Name" placeholder="Mickey">
     <br>
     Credit Card Number:<br>
-    <input type="text" name="creditcard" value="xxxx-xxxx-xxxx-xxxx">
+    <input type="text" id="CreditCard" placeholder="xxxx-xxxx-xxxx-xxxx" >
     <br>    
-    Expiary Date:<br>
-    <input type="text" name="expirydate" value="01/17">
+    Expiry Date:<br>
+    <input type="text" id="ExpiryDate" placeholder="01/17">
     <br>    
     Security Code:<br>
-    <input type="text" name="securitycode" value="Number on back of card">
+    <input type="text" id="SecurityCode" placeholder="Number on back of card">
     <br>    
     Address1:<br>
-    <input type="text" name="address1" value="117 culverhouse road">
+    <input type="text" id="Address1" placeholder="117 culverhouse road">
     <br />
     Address2:<br>
-    <input type="text" name="address2" value="Caerau, Cardiff">
+    <input type="text" id="Address2" placeholder="Caerau, Cardiff">
     <br />
 
         <br><br>
 
-    <input type="submit" value="Submit" id="validate">
+    <input type="submit" value="Submit" id="btnValidate" onclick = "return checkPaymentForm()">
 </form>
 
 

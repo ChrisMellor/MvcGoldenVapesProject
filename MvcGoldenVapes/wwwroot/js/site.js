@@ -1,54 +1,79 @@
-﻿function validateCard(card) {
-    var re = /^(?:4[0 - 9]{12}(?:[0 - 9]{3})?|5[1 - 5][0 - 9]{14 }|6(?:011 | 5[0 - 9][0 - 9])[0 - 9]{12 }|3[47][0 - 9]{13 }|3(?:0[0 - 5] | [68][0 - 9])[0 - 9]{11 }|(?:2131 | 1800 | 35\d{3 })\d{11 })$/
-    return re.test(card);
+﻿function checkName()
+{
+
+    var textField = document.getElementById("Name");
+    var regexField = /^[a-zA-Z ]+$/;
+
+    if (textField.value.match(RegExp(regexField)))
+    {
+        alert("Correct");
+        return true;
+    }
+    else 
+    {
+        alert("Wrong");
+        return false;
+    }
 }
 
-function validateName(name) {
-    var re = /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/
-    return re.test(name)
+function checkCreditCard()
+{
+
+    var textField = document.getElementById("CreditCard");
+    var regexField = /(\b[4 | 5 | 6]\d{3}[\s-]?(\d{4 } [\s -]?){ 2 } \d{4 } \b)|(\b\d{4 } [\s -]?\d{6 } [\s -]?\d{5 } \b)/;
+
+    if (textField.value.match(RegExp(regexField)))
+    {
+        alert("Correct");
+        return true;
+    }
+    else 
+    {
+        alert("Wrong");
+        return false;
+    }
 }
 
-function validateExpDate(date) {
-    var re = /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/
-    return re.test(date)
+function checkExpiryDate()
+{
+
+    var textField = document.getElementById("ExpiryDate");
+    var regexField = /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/;
+
+    if (textField.value.match(RegExp(regexField)))
+    {
+        alert("Correct");
+        return true;
+    }
+    else 
+    {
+        alert("Wrong");
+        return false;
+    }
 }
 
-function validateSVC(security){
-    var re = /^[0-9]{3,4}$/
-    return re.test(security)
+function checkSecurityCode()
+{
+
+    var textField = document.getElementById("SecurityCode");
+    var regexField = /^[0-9]{3,4}$/;
+
+    if (textField.value.match(RegExp(regexField)))
+    {
+        alert("Correct");
+        return true;
+    }
+    else 
+    {
+        alert("Wrong");
+        return false;
+    }
 }
 
-function validate() {
-
-    var Name = $("#name").val();
-    if (validateName(Name)) {
-    }
-    else {
-        alert("Please enter a Valid Name");
-    }
-
-    var card = $("#card").val();
-    if (validateCard(card)) {
-    }
-    else {
-        alert("Please enter Valid Card Details");
-    }
-
-    var ExpDate = $("#ExpDate").val();
-    if (validateExpDate(date)) {
-    }
-    else {
-        alert("Please enter a Valid Expiry Date");
-    }
-
-    var security = $("#security").val();
-    if (validateSVC(security)) {
-    }
-    else {
-        alert("Please enter a Valid SVC number");
-    }
-
-    return false;
+function checkPaymentForm()
+{
+    checkName();
+    checkCreditCard();
+    checkExpiryDate();
+    checkSecurityCode();
 }
-
-$("#validate").bind("click", validate);

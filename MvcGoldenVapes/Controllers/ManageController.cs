@@ -27,7 +27,7 @@ namespace MvcGoldenVapes.Controllers
           UserManager<ApplicationUser> userManager,
           SignInManager<ApplicationUser> signInManager,
           IOptions<IdentityCookieOptions> identityCookieOptions,
-          IEmailSender emailSender,
+          IEmailSender emailSender, 
           ISmsSender smsSender,
           ILoggerFactory loggerFactory)
         {

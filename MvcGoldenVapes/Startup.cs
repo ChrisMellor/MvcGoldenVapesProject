@@ -38,15 +38,21 @@ namespace MvcGoldenVapes
 
         public IConfigurationRoot Configuration { get; }
 
-       
+
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            
-            services.AddDbContext<ProductsContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+              .AddEntityFrameworkStores<ApplicationDbContext>()
+              .AddDefaultTokenProviders();
+
+            services.AddDbContext<ProductsContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ProductsContext>()
@@ -95,7 +101,8 @@ namespace MvcGoldenVapes
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            seedData.Initialize(app.ApplicationServices);
+            SeedData.Initialize(app.ApplicationServices);
+
         }
     }
 }
