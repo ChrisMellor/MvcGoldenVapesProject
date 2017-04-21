@@ -56,10 +56,12 @@ namespace MvcGoldenVapes
                 config.SignIn.RequireConfirmedEmail = true;
             });
 
-            services.AddDbContext<ProductsContext>(options =>
-        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            var connection = @"Server=(localdb)\mssqllocaldb;Database=GoldenVapes;Trusted_Connection=True;";
+            services.AddDbContext<ProductsContext>(options => options.UseSqlServer(connection));
+        
+
+        services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ProductsContext>()
                 .AddDefaultTokenProviders();
 
