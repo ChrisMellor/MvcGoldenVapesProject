@@ -12,7 +12,7 @@ namespace MvcGoldenVapes.Models.ShoppingCartModels
 {
     [Table("VapeJuices")]
 
-    public class vapeProducts
+    public class VapeProducts
     {
         [Key]
         public int VapeID { get; set; }

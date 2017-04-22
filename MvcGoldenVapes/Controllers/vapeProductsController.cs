@@ -56,7 +56,7 @@ return View(vapeProducts);
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("VapeID,VapeBrand,VapeName,VapeStock,VapePrice,VapeSize")] vapeProducts vapeProducts)
+        public async Task<IActionResult> Create([Bind("VapeID,VapeBrand,VapeName,VapeStock,VapePrice,VapeSize")] VapeProducts vapeProducts)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ return View(vapeProducts);
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("VapeID,VapeBrand,VapeName,VapeStock,VapePrice,VapeSize")] vapeProducts vapeProducts)
+        public async Task<IActionResult> Edit(int id, [Bind("VapeID,VapeBrand,VapeName,VapeStock,VapePrice,VapeSize")] VapeProducts vapeProducts)
         {
             if (id != vapeProducts.VapeID)
             {

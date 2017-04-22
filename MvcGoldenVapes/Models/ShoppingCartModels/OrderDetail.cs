@@ -13,6 +13,6 @@ namespace MvcGoldenVapes.Models.ShoppingCartModels
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
         public virtual Order Order { get; set; }
-        public virtual vapeProducts vapeProducts { get; set; }
+        public virtual VapeProducts vapeProducts { get; set; }
     }
 }

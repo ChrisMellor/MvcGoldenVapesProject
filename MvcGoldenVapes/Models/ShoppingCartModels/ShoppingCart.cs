@@ -1,42 +1,50 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace MvcGoldenVapes.Models.ShoppingCartModels
 {
+
     public partial class ShoppingCart
     {
         vapeStoreEntities storeDB = new vapeStoreEntities();
         string ShoppingCartId { get; set; }
         public const string CartSessionKey = "CartId";
-        public static ShoppingCart GetCart(HttpContextBase context)
+        public static ShoppingCart GetCart(HttpContext context)
         {
             var cart = new ShoppingCart();
             cart.ShoppingCartId = cart.GetCartId(context);
             return cart;
         }
+
+        private string GetCartId(HttpContext context)
+        {
+            throw new NotImplementedException();
+        }
+
         // Helper method to simplify shopping cart calls
         public static ShoppingCart GetCart(Controller controller)
         {
             return GetCart(controller.HttpContext);
         }
-        public void AddToCart(Album album)
+        public void AddToCart(VapeProducts vapeProducts)
         {
             // Get the matching cart and album instances
             var cartItem = storeDB.Carts.SingleOrDefault(
                 c => c.CartId == ShoppingCartId
-                && c.AlbumId == album.AlbumId);
+                && c.VapeID == vapeProducts.VapeID);
 
             if (cartItem == null)
             {
                 // Create a new cart item if no cart item exists
                 cartItem = new Cart
                 {
-                    AlbumId = album.AlbumId,
+                    VapeID = vapeProducts.VapeID,
                     CartId = ShoppingCartId,
-                    Count = 1,
-                    DateCreated = DateTime.Now
+                    quantity = 1,
                 };
                 storeDB.Carts.Add(cartItem);
             }
@@ -54,7 +62,7 @@ namespace MvcGoldenVapes.Models.ShoppingCartModels
             // Get the cart
             var cartItem = storeDB.Carts.Single(
                 cart => cart.CartId == ShoppingCartId
-                && cart.RecordId == id);
+                && cart.VapeID == id);
 
             int itemCount = 0;
 
@@ -96,7 +104,7 @@ namespace MvcGoldenVapes.Models.ShoppingCartModels
             // Get the count of each item in the cart and sum them up
             int? count = (from cartItems in storeDB.Carts
                           where cartItems.CartId == ShoppingCartId
-                          select (int?)cartItems.Count).Sum();
+                          select cartItems.Count).Sum();
             // Return 0 if all entries are null
             return count ?? 0;
         }
@@ -108,7 +116,7 @@ namespace MvcGoldenVapes.Models.ShoppingCartModels
             decimal? total = (from cartItems in storeDB.Carts
                               where cartItems.CartId == ShoppingCartId
                               select (int?)cartItems.Count *
-                              cartItems.Album.Price).Sum();
+                              cartItems.).Sum();
 
             return total ?? decimal.Zero;
         }
@@ -123,13 +131,13 @@ namespace MvcGoldenVapes.Models.ShoppingCartModels
             {
                 var orderDetail = new OrderDetail
                 {
-                    AlbumId = item.AlbumId,
+                    VapeID = item.VapeID,
                     OrderId = order.OrderId,
-                    UnitPrice = item.Album.Price,
-                    Quantity = item.Count
+                    UnitPrice = item.vapePrice,
+                    Quantity = item.quantity
                 };
                 // Set the order total of the shopping cart
-                orderTotal += (item.Count * item.Album.Price);
+                orderTotal += (item.count * item.vapePrice);
 
                 storeDB.OrderDetails.Add(orderDetail);
 
@@ -145,7 +153,7 @@ namespace MvcGoldenVapes.Models.ShoppingCartModels
             return order.OrderId;
         }
         // We're using HttpContextBase to allow access to cookies.
-        public string GetCartId(HttpContextBase context)
+        public string GetCartId(System.Web.HttpContextBase context)
         {
             if (context.Session[CartSessionKey] == null)
             {

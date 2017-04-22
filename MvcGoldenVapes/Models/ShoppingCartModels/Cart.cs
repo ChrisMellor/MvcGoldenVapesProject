@@ -8,7 +8,9 @@ namespace MvcGoldenVapes.Models.ShoppingCartModels
 {
     public class Cart
     {
+        
         public int VapeID { get; set; }
+        public string CartId { get; set; }
         public string vapeName { get; set; }
         public int quantity { get; set; }
         public double SaleWorth { get; set; }

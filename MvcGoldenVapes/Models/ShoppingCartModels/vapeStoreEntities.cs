@@ -11,5 +11,6 @@ namespace MvcGoldenVapes.Models.ShoppingCartModels
         public DbSet<Order> Orders{ get; set; }
         public DbSet<OrderDetail>OrderDetails{ get; set; }
         public DbSet<Order> Order { get; set; }
+        public DbSet<VapeProducts> VapeProducts { get; set; }
     }
 }

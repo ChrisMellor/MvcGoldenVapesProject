@@ -24,7 +24,7 @@ namespace MvcGoldenVapes.Models
                     return;
                 }
                 context.products.AddRange(
- new vapeProducts
+ new VapeProducts
  {
      VapeBrand = "Jim",
      VapeName = "Ninja",
@@ -32,7 +32,7 @@ namespace MvcGoldenVapes.Models
      VapeSize = "10",
      VapeStock = 9
  },
- new vapeProducts
+ new VapeProducts
  {
      VapeBrand = "Jerry",
      VapeName = "Daog",
@@ -40,7 +40,7 @@ namespace MvcGoldenVapes.Models
      VapeSize = "10",
      VapeStock = 9
  },
- new vapeProducts
+ new VapeProducts
  {
      VapeBrand = "Bob",
      VapeName = "Cat",

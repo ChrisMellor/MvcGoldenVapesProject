@@ -13,10 +13,10 @@ namespace MvcGoldenVapes.Data
         {
         }
 
-        public DbSet<vapeProducts>products { get; set; }
+        public DbSet<VapeProducts>products { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
              {
-                 modelBuilder.Entity<vapeProducts>().ToTable("VapeJuices");
+                 modelBuilder.Entity<VapeProducts>().ToTable("VapeJuices");
              }
     }
    
