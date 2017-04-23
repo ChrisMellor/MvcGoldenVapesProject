@@ -47,7 +47,7 @@ namespace MvcGoldenVapes
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-           
+
             services.AddIdentity<ApplicationUser, IdentityRole>(config =>
             {
                 config.SignIn.RequireConfirmedEmail = true;
@@ -55,13 +55,14 @@ namespace MvcGoldenVapes
         .AddEntityFrameworkStores<ApplicationDbContext>()
         .AddDefaultTokenProviders();
 
-
             var connection = @"Server=(localdb)\mssqllocaldb;Database=GoldenVapes;Trusted_Connection=True;";
             services.AddDbContext<ProductsContext>(options => options.UseSqlServer(connection));
-        
+            services.AddDbContext<OrderContext>(options => options.UseSqlServer(connection));
 
-        services.AddIdentity<ApplicationUser, IdentityRole>()
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ProductsContext>()
+                .AddEntityFrameworkStores<OrderContext>()
                 .AddDefaultTokenProviders();
 
             _testSecret = Configuration["MySecret"];
@@ -134,10 +135,6 @@ namespace MvcGoldenVapes
             });
 
             SeedData.Initialize(app.ApplicationServices);
-
-            
-            
-
         }
     }
 }

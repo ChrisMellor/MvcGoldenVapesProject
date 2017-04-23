@@ -5,8 +5,8 @@
     align: center;
 }
 
-nav{
-    text-align:left;
+nav {
+    text-align: left;
 }
 
 /* Wrapping element */
@@ -29,6 +29,7 @@ textarea {
     font-size: 20px;
     line-height: 1.4;
 }
+
 .btn-bracketed::before {
     display: inline-block;
     content: "[";
@@ -106,7 +107,7 @@ input[type=submit] {
 form {
     display: inline-block;
     text-align: center;
-    min-width:60%;
+    min-width: 60%;
 }
 
 input {
@@ -120,8 +121,7 @@ input {
 }
 
 footer {
-    position: relative;
-    bottom: 0;
+    display: block;
     text-align: left;
 }
 
@@ -134,61 +134,6 @@ footer {
     float: right;
 }
 
-#wrapper {
-    white-space: nowrap;
-}
-
-#leftcolumn, #rightcolumn {
-    float: left;
-    min-height: 450px;
-}
-
-#leftcolumn {
-    width: 40%;
-}
-
-#rightcolumn {
-    width: 40%;
-}
-
-#innerLeft, #innerRight {
-    float: right;
-    min-height: 450px;
-    display: block;
-}
-
-#innerLeft {
-    display: inline-block;
-    vertical-align: top;
-}
-
-#innerRight {
-    width: 40%;
-}
-
-#picture {
-    float: left;
-    width: 15%;
-    margin: 20px 0;
-    line-height: auto;
-}
-
-#text {
-    width: auto;
-    padding-left: 16%;
-    line-height: auto;
-    vertical-align: middle;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-    #text p {
-        display: inline-block;
-        margin: 20px 0;
-        vertical-align: middle;
-        line-height: normal;
-    }
-
 table {
     width: 100%;
 }
@@ -199,4 +144,14 @@ th {
 
 #productLayout {
     padding-left: 15%;
+}
+
+#Quantity {
+    width: 15%;
+    text-align: center;
+}
+
+#Add {
+    width: 25%;
+    text-align: center;
 }

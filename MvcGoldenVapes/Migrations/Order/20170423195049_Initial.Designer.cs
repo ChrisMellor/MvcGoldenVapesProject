@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using MvcGoldenVapes.Data;
 
-namespace MvcGoldenVapes.Migrations
+namespace MvcGoldenVapes.Migrations.Order
 {
-    [DbContext(typeof(ProductsContext))]
-    [Migration("20170420194938_MyFirstMigration")]
-    partial class MyFirstMigration
+    [DbContext(typeof(OrderContext))]
+    [Migration("20170423195049_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -17,24 +17,22 @@ namespace MvcGoldenVapes.Migrations
                 .HasAnnotation("ProductVersion", "1.1.1")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MvcGoldenVapes.Models.vapeProducts", b =>
+            modelBuilder.Entity("MvcGoldenVapes.Models.Cart", b =>
                 {
                     b.Property<int>("VapeID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("VapeBrand");
+                    b.Property<string>("Quantity");
+
+                    b.Property<string>("SubTotal");
 
                     b.Property<string>("VapeName");
 
                     b.Property<double>("VapePrice");
 
-                    b.Property<string>("VapeSize");
-
-                    b.Property<int>("VapeStock");
-
                     b.HasKey("VapeID");
 
-                    b.ToTable("VapeJuices");
+                    b.ToTable("CustomerOrders");
                 });
         }
     }

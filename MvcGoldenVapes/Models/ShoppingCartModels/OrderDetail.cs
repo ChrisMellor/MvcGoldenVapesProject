@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MvcGoldenVapes.Models.ShoppingCartModels
+namespace MvcGoldenVapes.Models
 {
     public class OrderDetail
     {
@@ -12,7 +12,6 @@ namespace MvcGoldenVapes.Models.ShoppingCartModels
         public int VapeID { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
-        public virtual Order Order { get; set; }
         public virtual VapeProducts vapeProducts { get; set; }
     }
 }

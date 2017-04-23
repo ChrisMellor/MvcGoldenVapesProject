@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 
 
-namespace MvcGoldenVapes.Models.ShoppingCartModels
+namespace MvcGoldenVapes.Models
 {
     [Table("VapeJuices")]
 
@@ -21,10 +21,5 @@ namespace MvcGoldenVapes.Models.ShoppingCartModels
         public int VapeStock { get; set; }
         public double VapePrice { get; set; }
         public string VapeSize { get; set; }
-
-       
-
     }
-
-
 }

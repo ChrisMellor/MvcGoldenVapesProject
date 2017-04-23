@@ -6,8 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcGoldenVapes.Data;
-using MvcGoldenVapes.Models.ShoppingCartModels;
-
+using MvcGoldenVapes.Models;
 
 namespace MvcGoldenVapes.Controllers
 {
@@ -23,20 +22,18 @@ namespace MvcGoldenVapes.Controllers
         // GET: vapeProducts
         public async Task<IActionResult> Index()
         {
-            return View(await _context.products.ToListAsync());
+            return View(await _context.Products.ToListAsync());
         }
 
-  
-
         // GET: vapeProducts/Details/5
-public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id)
 {
 if (id == null)
 {
 return NotFound();
 }
 
-            var vapeProducts = await _context.products
+            var vapeProducts = await _context.Products
                             .SingleOrDefaultAsync(m => m.VapeID == id);
             if (vapeProducts == null)
             {
@@ -75,7 +72,7 @@ return View(vapeProducts);
                 return NotFound();
             }
 
-            var vapeProducts = await _context.products.SingleOrDefaultAsync(m => m.VapeID == id);
+            var vapeProducts = await _context.Products.SingleOrDefaultAsync(m => m.VapeID == id);
             if (vapeProducts == null)
             {
                 return NotFound();
@@ -125,7 +122,7 @@ return View(vapeProducts);
                 return NotFound();
             }
 
-            var vapeProducts = await _context.products
+            var vapeProducts = await _context.Products
                 .SingleOrDefaultAsync(m => m.VapeID == id);
             if (vapeProducts == null)
             {
@@ -140,15 +137,16 @@ return View(vapeProducts);
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var vapeProducts = await _context.products.SingleOrDefaultAsync(m => m.VapeID == id);
-            _context.products.Remove(vapeProducts);
+            var vapeProducts = await _context.Products.SingleOrDefaultAsync(m => m.VapeID == id);
+            _context.Products.Remove(vapeProducts);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
         private bool vapeProductsExists(int id)
         {
-            return _context.products.Any(e => e.VapeID == id);
+            return _context.Products.Any(e => e.VapeID == id);
         }
+      
     }
 }

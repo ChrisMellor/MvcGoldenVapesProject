@@ -16,7 +16,7 @@ namespace MvcGoldenVapes.Migrations
                 .HasAnnotation("ProductVersion", "1.1.1")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MvcGoldenVapes.Models.ShoppingCartModels.vapeProducts", b =>
+            modelBuilder.Entity("MvcGoldenVapes.Models.vapeProducts", b =>
                 {
                     b.Property<int>("VapeID")
                         .ValueGeneratedOnAdd();

@@ -7,17 +7,16 @@ using MvcGoldenVapes.Models;
 
 namespace MvcGoldenVapes.Data
 {
-    public class ProductsContext : DbContext
+    public class OrderContext : DbContext
     {
-        public  ProductsContext(DbContextOptions<ProductsContext> options) : base(options)
+        public OrderContext(DbContextOptions<OrderContext> options) : base(options)
         {
         }
 
-        public DbSet<VapeProducts>Products { get; set; }
+        public DbSet<Cart> Orders { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-             {
-                 modelBuilder.Entity<VapeProducts>().ToTable("VapeJuices");
-             }
+        {
+            modelBuilder.Entity<Cart>().ToTable("CustomerOrders");
+        }
     }
-   
 }

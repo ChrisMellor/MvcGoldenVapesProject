@@ -1,20 +1,51 @@
-﻿@{
-    ViewData["Title"] = "Storefront";
+﻿@model IEnumerable<MvcGoldenVapes.Models.VapeProducts>
+
+@{
+    ViewData["Title"] = "Index";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<img src="~/images/Logo.jpg" alt="Logo" />
-<br />
+<h2>Index</h2>
 
-<div id="imgsMenu">
-    <br />
-    <a asp-area="" asp-controller="Store" asp-action="Area51"><img src="~/images/AREA 51.png"></a>&emsp;&emsp;&emsp;&emsp;
-    <a asp-area="" asp-controller="Store" asp-action="GrimReaper"><img src="~/images/Grim.png"></a>
-    <br /><br /><br />
-    <a asp-area="" asp-controller="Store" asp-action="InspiredHaze"><img src="~/images/Inspired.png"></a>&emsp;&emsp;&emsp;&emsp;
-    <a asp-area="" asp-controller="Store" asp-action="SimplyVapour"><img src="~/images/Simply.png"></a>
-    <br /><br /><br />
-    <a asp-area="" asp-controller="Store" asp-action="VapourCrew"><img src="~/images/VAPOUR.png"></a>&emsp;&emsp;&emsp;&emsp;
-    <a asp-area="" asp-controller="Store" asp-action="ZombieJuice"><img src="~/images/ZOMBIE JUICE.png"></a>
-</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VapeBrand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VapeName)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.VapePrice)
+            </th>
+            <th>
+                Quantity
+            </th>
+        </tr>
+    </thead>
+    <tbody >
+        @foreach (var item in Model)
+        {
+            <tr >
+                <td style="vertical-align:middle;">
+                   @Html.DisplayFor(modelItem => item.VapeBrand) 
+                </td>
+                <td style="vertical-align:middle;">
+                    @Html.DisplayFor(modelItem => item.VapeName)
+                </td>
+                
+                <td style="vertical-align:middle;">
+                    @Html.DisplayFor(modelItem => item.VapePrice)
+                </td>
+               
+                <td>
+                    <input id="Quantity" type="number" min="0" max="25" />
+                    <input id="Add" type="button" value="Add to Cart" />
+                    <!--<a asp-action="Add" asp-route-id="@item.VapeID">Add</a> -->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

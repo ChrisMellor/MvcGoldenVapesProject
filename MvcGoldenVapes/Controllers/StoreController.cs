@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MvcGoldenVapes.Data;
+using Microsoft.EntityFrameworkCore;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,57 +12,26 @@ namespace MvcGoldenVapes.Controllers
 {
     public class StoreController : Controller
     {
+        private readonly ProductsContext _context;
+        private readonly OrderContext _OrderContext;
+        public StoreController(ProductsContext context, OrderContext OrderContext)
+        {
+            _context = context;
+            _OrderContext = OrderContext;
+        }
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.Products.ToListAsync());
+        }
+        // GET: vapeProducts
+
         // GET: /<controller>/
-        public IActionResult Index()
-        {
-            ViewData["Message"] = "VAPE NATION BOYS";
 
-            return View();
-        }
-
-        public IActionResult Area51()
-        {
-            ViewData["Message"] = "Out of this world";
-
-            return View();
-        }
-
-        public IActionResult GrimReaper()
-        {
-            ViewData["Message"] = "It's grim time";
-
-            return View();
-        }
-        public IActionResult InspiredHaze()
-        {
-            ViewData["Message"] = "It's a bit of a Inspired Haze";
-
-            return View();
-        }
-        public IActionResult SimplyVapour()
-        {
-            ViewData["Message"] = "Simply Vapour, What else?";
-
-            return View();
-        }
-        public IActionResult VapourCrew()
-        {
-            ViewData["Message"] = "Vapour Crew is what we do!";
-
-            return View();
-        }
-        public IActionResult ZombieJuice()
-        {
-            ViewData["Message"] = "Get it before Umbrella does!";
-
-            return View();
-        }
-
-        public IActionResult ShoppingCart()
+        public async Task<IActionResult> ShoppingCart()
         {
             ViewData["Message"] = "Page for all items added to cart (refresh upon load?)";
 
-            return View();
+            return View(await _OrderContext.Orders.ToListAsync());
         }
     
         public IActionResult Payment()
@@ -71,8 +42,11 @@ namespace MvcGoldenVapes.Controllers
             return View();
 
         }
-       
 
-        
+        private bool OrdersExists(int id)
+        {
+            return _OrderContext.Orders.Any(e => e.VapeID == id);
+        }
+
     }
 }
