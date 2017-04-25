@@ -1,0 +1,64 @@
+@model MvcGoldenVapes.Models.VapeProducts
+
+@{
+    ViewData["Title"] = "Edit existing Product";
+}
+
+<h2>@ViewData["Title"] </h2>
+<h3>@ViewData["Message"]</h3>
+
+<form id="DisplayForm" asp-action="Edit">
+    <div>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="VapeID" />
+        <div>
+            <label asp-for="VapeBrand"></label>
+            <div>
+                <input asp-for="VapeBrand" />
+                <span asp-validation-for="VapeBrand" class="text-danger"></span>
+            </div>
+        </div>
+        <div>
+            <label asp-for="VapeName"></label>
+            <div>
+                <input asp-for="VapeName" />
+                <span asp-validation-for="VapeName" class="text-danger"></span>
+            </div>
+        </div>
+        <div >
+            <label asp-for="VapeStock"></label>
+            <div>
+                <input asp-for="VapeStock"/>
+                <span asp-validation-for="VapeStock" class="text-danger"></span>
+            </div>
+        </div>
+        <div>
+            <label asp-for="VapePrice"></label>
+            <div>
+                <input asp-for="VapePrice" />
+                <span asp-validation-for="VapePrice" class="text-danger"></span>
+            </div>
+        </div>
+        <div>
+            <label asp-for="VapeSize"></label>
+            <div>
+                <input asp-for="VapeSize"/>
+                <span asp-validation-for="VapeSize" class="text-danger"></span>
+            </div>
+        </div>
+        <div>
+            <div>
+                <input type="submit" value="Save" />
+            </div>
+        </div>
+    </div>
+</form>
+<br /><br />
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

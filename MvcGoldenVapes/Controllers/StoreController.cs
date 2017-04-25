@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MvcGoldenVapes.Data;
 using Microsoft.EntityFrameworkCore;
+using MvcGoldenVapes.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -29,9 +30,7 @@ namespace MvcGoldenVapes.Controllers
 
         public async Task<IActionResult> ShoppingCart()
         {
-            ViewData["Message"] = "Page for all items added to cart (refresh upon load?)";
-
-            return View(await _OrderContext.Orders.ToListAsync());
+                   return View(await _OrderContext.Orders.ToListAsync());
         }
     
         public IActionResult Payment()
@@ -48,5 +47,21 @@ namespace MvcGoldenVapes.Controllers
             return _OrderContext.Orders.Any(e => e.VapeID == id);
         }
 
-    }
+        // POST: vapeProducts/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Add([Bind("VapeID,VapeName,VapePrice,Quantity,SubTotal")] Cart Cart)
+        {
+            if (ModelState.IsValid)
+            {
+                _OrderContext.Add(Cart);
+                await _OrderContext.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(Cart);
+        }
+
+          }
 }

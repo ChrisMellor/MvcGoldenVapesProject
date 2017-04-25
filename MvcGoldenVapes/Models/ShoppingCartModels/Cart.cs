@@ -9,17 +9,22 @@ using System.ComponentModel;
 
 namespace MvcGoldenVapes.Models
 {
-        [Table("CustomerOrders")]
+   [Table("CustomerOrders")]
+
     public class Cart
     { 
         [Key]
-        
+        [DisplayName("Vape ID")]
         public int VapeID { get; set; }
         [DisplayName  ("Vape Name")]
         public string VapeName { get; set; }
+        [DisplayName("Vape Price")]
+        [DataType(DataType.Currency)]
         public double VapePrice { get; set; }
-        public string Quantity { get; set; }
-        public string SubTotal { get; set; }
+        public int Quantity { get; set; }
+        [DisplayName("Sub Total")]
+        [DataType(DataType.Currency)]
+        public double SubTotal { get; set; }
     }
 
 }

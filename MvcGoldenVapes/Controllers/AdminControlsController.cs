@@ -7,14 +7,16 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcGoldenVapes.Data;
 using MvcGoldenVapes.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MvcGoldenVapes.Controllers
 {
-    public class vapeProductsController : Controller
+    [Authorize(Roles = "Admin")]
+    public class AdminControlsController : Controller
     {
         private readonly ProductsContext _context;
 
-        public vapeProductsController(ProductsContext context)
+        public AdminControlsController(ProductsContext context)
         {
             _context = context;    
         }

@@ -1,51 +1,52 @@
 ﻿@model IEnumerable<MvcGoldenVapes.Models.VapeProducts>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Store";
 }
+<h2>@ViewData["Title"] </h2>
+<h3>@ViewData["Message"]</h3>
+<form asp-action="Add">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.VapeBrand)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.VapeName)
+                </th>
 
-<h2>Index</h2>
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.VapeBrand)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VapeName)
-            </th>
-            
-            <th>
-                @Html.DisplayNameFor(model => model.VapePrice)
-            </th>
-            <th>
-                Quantity
-            </th>
-        </tr>
-    </thead>
-    <tbody >
-        @foreach (var item in Model)
-        {
-            <tr >
-                <td style="vertical-align:middle;">
-                   @Html.DisplayFor(modelItem => item.VapeBrand) 
-                </td>
-                <td style="vertical-align:middle;">
-                    @Html.DisplayFor(modelItem => item.VapeName)
-                </td>
-                
-                <td style="vertical-align:middle;">
-                    @Html.DisplayFor(modelItem => item.VapePrice)
-                </td>
-               
-                <td>
-                    <input id="Quantity" type="number" min="0" max="25" />
-                    <input id="Add" type="button" value="Add to Cart" />
-                    <!--<a asp-action="Add" asp-route-id="@item.VapeID">Add</a> -->
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.VapePrice)
+                </th>
+                <th>
+                    Quantity
+                </th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="vertical-align:middle;">
+                        @Html.DisplayFor(modelItem => item.VapeBrand)
+                    </td>
+                    <td style="vertical-align:middle;">
+                        @Html.DisplayFor(modelItem => item.VapeName)
+                    </td>
+
+                    <td style="vertical-align:middle;">
+                        @Html.DisplayFor(modelItem => item.VapePrice)
+                    </td>
+
+                    <td>
+                        <input id="Quantity" type="number" min="0" max="25" />
+
+                        <input type="submit" value="Add to Cart" />
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>

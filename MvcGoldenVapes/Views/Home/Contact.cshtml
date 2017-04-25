@@ -20,28 +20,39 @@
 
 
 <h3>Contact Form</h3>
-<div>
-    <form action="mailto:ebbwvale@stores.cashgenerator.co.uk?Subject=Contact%20Us&body=">
-        <br />
 
-        <label for="fname">First Name</label>
+<form id="DisplayForm" action="mailto:ebbwvale@stores.cashgenerator.co.uk?Subject=Contact%20Us&body=">
+    <br />
+
+        <div id="FormLabel">
+            <label for="fname">First Name</label>
+        </div>
         <input id="fname" name="firstname" placeholder="Fred" type="text" /><br />
 
+    <div id="FormLabel">
         <label for="lname">Last Name</label>
-        <input id="lname" name="lastname" placeholder="Bloggs" type="text" /><br />
+    </div>
+    <input id="lname" name="lastname" placeholder="Bloggs" type="text" /><br />
 
+
+    <div id="FormLabel">
         <label for="email">Email Address</label>
-        <input id="email" name="email" placeholder="example@provider.co.uk" required="" type="text" /><br />
+    </div>
+    <input id="email" name="email" placeholder="example@provider.co.uk" required="" type="text" /><br />
 
+
+    <div id="FormLabel">
         <label for="country">Country</label>
-        <select id="country" name="country" type="select-one" value="UK"><option value="UK">United Kingdom</option><option value="canada">Canada</option><option value="usa">USA</option><option value="Aus">Australia</option></select><br />
+    </div>
+    <select id="country" name="country" type="select-one" value="UK"><option value="UK">United Kingdom</option><option value="canada">Canada</option><option value="usa">USA</option><option value="Aus">Australia</option></select><br />
 
+
+    <div id="FormLabel">
         <label for="body">Comments</label>
-        <textarea id="body" name="body" placeholder="Please enter your comments that you want to talk to us about" required="" rows="4" cols="20"></textarea>
-
-        <br />
-        <input type="submit" value="Send" /><br />
-    </form>
-</div>
+    </div>
+    <textarea id="body" name="body" placeholder="Please enter your comments that you want to talk to us about" required="" rows="4" cols="20"></textarea>
 
 
+    <br />
+    <input type="submit" value="Send" /><br />
+</form>

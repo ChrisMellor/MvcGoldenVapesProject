@@ -60,24 +60,24 @@ namespace MvcGoldenVapes.Models
                             VapeID = 1,
                             VapeName = "Tom",
                             VapePrice = 9.99,
-                            Quantity = " 4",
-                            SubTotal = "22"
+                            Quantity = 4,
+                            SubTotal = 22
                         },
                         new Cart
                         {
                             VapeID = 1,
                             VapeName = "Tom",
                             VapePrice = 9.99,
-                            Quantity = " 4",
-                            SubTotal = "22"
+                            Quantity = 4,
+                            SubTotal = 22
                         },
                         new Cart
                         {
                             VapeID = 1,
                             VapeName = "Tom",
                             VapePrice = 9.99,
-                            Quantity = " 4",
-                            SubTotal = "22"
+                            Quantity =  4,
+                            SubTotal = 22
                         }
                     );
                     context.SaveChanges();

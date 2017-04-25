@@ -1,47 +1,53 @@
 @model MvcGoldenVapes.Models.VapeProducts
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Product's details";
 }
 
-<h2>Details</h2>
+<h2>@ViewData["Title"] </h2>
+<h3>@ViewData["Message"]</h3>
 
-<div>
-    <h4>vapeProducts</h4>
+<div id="AdminLayout">
     <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.VapeID)
+            <br /> <br />
         </dt>
         <dd>
             @Html.DisplayFor(model => model.VapeID)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.VapeBrand)
+            <br /> <br />
         </dt>
         <dd>
             @Html.DisplayFor(model => model.VapeBrand)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.VapeName)
+            <br /> <br />
         </dt>
         <dd>
             @Html.DisplayFor(model => model.VapeName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.VapeStock)
+            <br /> <br />
         </dt>
         <dd>
             @Html.DisplayFor(model => model.VapeStock)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.VapePrice)
+            <br /> <br />
         </dt>
         <dd>
             @Html.DisplayFor(model => model.VapePrice)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.VapeSize)
+            <br /> <br />
         </dt>
         <dd>
             @Html.DisplayFor(model => model.VapeSize)
@@ -49,7 +55,7 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.VapeID">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.VapeID">Edit</a> <br /><br />
     <a asp-action="Index">Back to List</a>
 </div>
 @section Scripts {
