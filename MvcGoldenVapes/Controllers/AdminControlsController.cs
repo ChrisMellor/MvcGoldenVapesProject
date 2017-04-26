@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace MvcGoldenVapes.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Policy = "RequireAdministratorRole")]
     public class AdminControlsController : Controller
     {
         private readonly ProductsContext _context;

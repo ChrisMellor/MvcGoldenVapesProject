@@ -1,8 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using MvcGoldenVapes.Models
+@using Microsoft.AspNetCore.Authorization
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+@inject IAuthorizationService AuthorizationService
 
 @if (SignInManager.IsSignedIn(User))
 {
@@ -11,6 +13,10 @@
             <li>
                 <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
             </li>
+            @if (await AuthorizationService.AuthorizeAsync(User, "RequireAdministratorRole"))
+            {
+                <li><a asp-area="" asp-controller="AdminControls" asp-action="Index">Admin Controls</a></li>
+            }
             <li>
                 <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
             </li>
@@ -20,6 +26,7 @@
 else
 {
     <ul style="float:right; text-align:left;" class="nav navbar-nav">
+        
         <li><a asp-area="" asp-controller="Account" asp-action="Register">Register</a></li>
         <li><a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></li>
     </ul>

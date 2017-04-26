@@ -74,7 +74,12 @@ namespace MvcGoldenVapes
                 options.Filters.Add(new RequireHttpsAttribute());
             });
 
-              services.Configure<IdentityOptions>(options =>
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("RequireAdministratorRole", policy => policy.RequireRole("Admin"));
+            });
+
+            services.Configure<IdentityOptions>(options =>
             {
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
                 options.Lockout.MaxFailedAccessAttempts = 10;
